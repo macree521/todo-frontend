@@ -1,0 +1,25 @@
+html {
+    min-height: 100%;
+    overscroll-behavior: none;
+}
+
+body {
+    padding: 50px;
+    background-image: repeating-linear-gradient(to bottom right, #014421, #63c0de, #d388f1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    overscroll-behavior: none;
+    height: 100%;
+}
+
+#heading {
+    text-align: center;
+    font-size: 48px;
+    color: white;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}

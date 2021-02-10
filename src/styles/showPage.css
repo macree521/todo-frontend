@@ -1,0 +1,9 @@
+.textAboveBtn {
+    transform: translateY(150px);
+    font-size: 25px;
+}
+
+a:link {
+    margin-top: 500px;
+    cursor: pointer;
+}
