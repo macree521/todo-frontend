@@ -41,5 +41,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://mc-todo-backend.herokuapp.com/api"
+  "proxy": {
+    "/api": {
+      "https://mc-todo-backend.herokuapp.com"
+    }
+  }
+    
 }
