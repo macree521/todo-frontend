@@ -19,8 +19,10 @@
     "start": "react-scripts start",
     "build": "webpack",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
+  "heroku-run-build-script": true,
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -39,6 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "heroku-run-build-script": true,
   "proxy": "https://mc-todo-backend.herokuapp.com/api"
 }
