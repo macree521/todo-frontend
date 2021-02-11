@@ -8,7 +8,11 @@ export default function ToDoPage () {
     const [addTodo, setAddTodo] = useState('')
 
     useEffect(() => {
-        fetch('https://mc-todo-backend.herokuapp.com/api').then(response => {
+        fetch('https://mc-todo-backend.herokuapp.com/api', {
+            mode: "cors",
+            headers: {"Access-Control-Allow-Origin": "*"}
+        })
+        .then(response => {
             if(response.ok){
                 return response.json()
             }
