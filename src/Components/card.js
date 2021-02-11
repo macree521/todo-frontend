@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 
 export default function Card ({ listOfTodos }) {
+    const [id] = useState('')
     const transition = useTransition(listOfTodos, listOfTodos => listOfTodos.id, {
         from: {
             id: listOfTodos.id,
