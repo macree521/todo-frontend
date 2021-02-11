@@ -5,7 +5,7 @@ export default function Delete ({ id }) {
     const history = useHistory()
 
     const deleteTodo = () => {
-        fetch(`/api/${id}`, {
+        fetch(`https://mc-todo-backend.herokuapp.com/api/${id}`, {
             method: ['POST'],
             body: JSON.stringify({
                 id: id

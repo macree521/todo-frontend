@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 
 export default function Card ({ listOfTodos }) {
-    const transition = useTransition(listOfTodos, listOfTodos => listOfTodos.id, {
+    console.log("card: ", listOfTodos)
+    const transition =  useTransition(listOfTodos, todo => todo.id, {
         from: {
             opacity: 1,
             width: '4%',
@@ -19,12 +20,15 @@ export default function Card ({ listOfTodos }) {
         }
     })
 
-    return transition.map(({ item, key, props }) => (
-        <animated.ul key={item.id} style={props}>
-            <li className="listOfTodos">
-                <Link to={`${item.id}`} className="cardLinks">{item.content}</Link>
-            </li> 
-        </animated.ul>
-
-    ))
+    return (
+        
+        transition.map(({ item, key, props }) => (
+            <animated.ul key={item.id} style={props}>
+                <li className="listOfTodos">
+                    <Link to={`${item.id}`} className="cardLinks">{item.content}</Link>
+                </li> 
+            </animated.ul>
+    
+        ))
+    )
 }

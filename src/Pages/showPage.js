@@ -8,7 +8,7 @@ export default function ShowPage() {
     const [todo, setTodo] = useState([])
     
     useEffect(() => {
-        fetch(`/api/${id}`)
+        fetch(`https://mc-todo-backend.herokuapp.com/api/${id}`)
         .then(response => response.json())
         .then(data => setTodo(data))
     }, [id])

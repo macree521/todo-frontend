@@ -8,14 +8,13 @@ export default function ToDoPage () {
     const [addTodo, setAddTodo] = useState('')
 
     useEffect(() => {
-        fetch('https://mc-todo-backend.herokuapp.com/api', {
-            mode: 'no-cors'
-        })
-        .then(response => {
-            if(response.ok){
-                return response.json()
-            }
-        }).then(data => setTodo(data))
+        // fetch('https://mc-todo-backend.herokuapp.com/api', {
+        //     mode: 'no-cors'
+        // })
+        // .then(response => response.json())
+        // .then(data => setTodo(data))
+        // .catch(err => console.error(err))
+        getLatestTodos()
     },[])
 
     const handleFormChange = (inputValue) => {
@@ -42,10 +41,8 @@ export default function ToDoPage () {
 
     const getLatestTodos = () => {
         fetch('https://mc-todo-backend.herokuapp.com/api').then(response => {
-            if(response.ok) {
                 return response.json()
-            }
-        }).then(data => setTodo(data))
+        }).then(data => setTodo(data)).catch(err => console.log)
     }
 
     return (
@@ -53,7 +50,7 @@ export default function ToDoPage () {
             <Form userInput={addTodo} 
             onFormChange={handleFormChange}
             onFormSubmit={handleFormSubmit} />
-            <Card listOfTodos={todo} />
+            { todo ?  <Card listOfTodos={todo} /> : null}
         </div>
     );
 }
