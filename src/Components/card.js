@@ -5,14 +5,14 @@ import { useTransition, animated } from 'react-spring';
 export default function Card ({ listOfTodos }) {
     const transition = useTransition(listOfTodos, listOfTodos => listOfTodos.id, {
         from: {
-            id: id,
+            id: listOfTodos.id,
             opacity: 1,
             width: '4%',
             marginLeft: -100,
             marginRight: 100
         },
         enter: {
-            id: id,
+            id: listOfTodos.id,
             opacity: 1,
             width: '100%',
             padding: '5px 0',
