@@ -9,8 +9,8 @@ export default function ToDoPage () {
 
     useEffect(() => {
         fetch('https://mc-todo-backend.herokuapp.com/api', {
-            mode: "cors",
-            headers: {"Access-Control-Allow-Origin": "*"}
+            mode: 'no-cors',
+            //headers: {"Access-Control-Allow-Origin": "*"}
         })
         .then(response => {
             if(response.ok){
