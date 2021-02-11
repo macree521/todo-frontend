@@ -8,7 +8,7 @@ export default function ToDoPage () {
     const [addTodo, setAddTodo] = useState('')
 
     useEffect(() => {
-        fetch('https://mc-todo.herokuapp.com/').then(response => {
+        fetch('https://mc-todo-backend.herokuapp.com/api').then(response => {
             if(response.ok){
                 return response.json()
             }
@@ -21,7 +21,7 @@ export default function ToDoPage () {
     }
 
     const handleFormSubmit = () => {
-        fetch('https://mc-todo.herokuapp.com/create', {
+        fetch('https://mc-todo-backend.herokuapp.com/api/create', {
             method: ['POST'],
             body: JSON.stringify({
                 content: addTodo
@@ -38,7 +38,7 @@ export default function ToDoPage () {
     }
 
     const getLatestTodos = () => {
-        fetch('https://mc-todo.herokuapp.com/').then(response => {
+        fetch('https://mc-todo-backend.herokuapp.com/api').then(response => {
             if(response.ok) {
                 return response.json()
             }
